@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/posts/16107</loc>
-    
-    <lastmod>2021-02-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lymtics.top/about/index.html</loc>
     
     <lastmod>2021-02-22</lastmod>
@@ -123,14 +116,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/tags/Books/</loc>
-    <lastmod>2021-02-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Feelings/</loc>
+    <loc>https://lymtics.top/tags/C/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -151,13 +137,6 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/tags/C/</loc>
-    <lastmod>2021-02-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lymtics.top/tags/Experience/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
@@ -166,6 +145,20 @@
   
   <url>
     <loc>https://lymtics.top/tags/Computer/</loc>
+    <lastmod>2021-02-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/tags/Books/</loc>
+    <lastmod>2021-02-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/tags/Feelings/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -195,28 +188,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Reading/</loc>
-    <lastmod>2021-02-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lymtics.top/categories/Small-Toys/</loc>
-    <lastmod>2021-02-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/categories/Language/C/</loc>
-    <lastmod>2021-02-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/categories/Language/C/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -230,7 +202,21 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Reading/Japanese/</loc>
+    <loc>https://lymtics.top/categories/Language/C/</loc>
+    <lastmod>2021-02-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/categories/Reading/</loc>
+    <lastmod>2021-02-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/categories/Language/C/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -238,6 +224,13 @@
   
   <url>
     <loc>https://lymtics.top/categories/About-Computer/Problems/</loc>
+    <lastmod>2021-02-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/categories/Reading/Japanese/</loc>
     <lastmod>2021-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
