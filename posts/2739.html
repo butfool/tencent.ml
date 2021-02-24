@@ -21,20 +21,19 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"lymtics.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"none","post_body":"fadeInUp","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"lymtics.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"none","post_body":"fadeInUp","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="C语言编译器为什么不检查数组是否越界  参考：  Ｃ语言的编译器为什么不检查数组下标越界  Ｃ语言的编译器是不检查下标越界的,以前知道这个问题,可是没有想过是什么原因?  总结如下:  不检查下标是否越界可以有效提高程序运行的效率，因为如果你检查，那么编译器必须在生成的目标代码中加入额外的代码用于程序运行时检测下标是否越界，这就会导致程序的运行速度下降，所以为了程序的运行效率，C&#x2F;C++才不检查下">
+<meta name="description" content="参考： Ｃ语言的编译器为什么不检查数组下标越界   Ｃ语言的编译器是不检查下标越界的,以前知道这个问题,可是没有想过是什么原因?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言编译器为什么不检查数组是否越界">
 <meta property="og:url" content="https://lymtics.top/posts/2739">
 <meta property="og:site_name" content="LYMTICS">
-<meta property="og:description" content="C语言编译器为什么不检查数组是否越界  参考：  Ｃ语言的编译器为什么不检查数组下标越界  Ｃ语言的编译器是不检查下标越界的,以前知道这个问题,可是没有想过是什么原因?  总结如下:  不检查下标是否越界可以有效提高程序运行的效率，因为如果你检查，那么编译器必须在生成的目标代码中加入额外的代码用于程序运行时检测下标是否越界，这就会导致程序的运行速度下降，所以为了程序的运行效率，C&#x2F;C++才不检查下">
+<meta property="og:description" content="参考： Ｃ语言的编译器为什么不检查数组下标越界   Ｃ语言的编译器是不检查下标越界的,以前知道这个问题,可是没有想过是什么原因?">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-14T01:34:52.446Z">
+<meta property="article:modified_time" content="2021-02-24T04:13:33.486Z">
 <meta property="article:author" content="Ren">
 <meta property="article:tag" content="C">
-<meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
 
 
@@ -132,7 +131,7 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+        <li class="menu-item menu-item-收藏夹"><a href="/favorites/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>收藏夹</a></li>
   </ul>
 </nav>
 
@@ -178,20 +177,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -283,7 +282,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-11-14 09:34:52" itemprop="dateModified" datetime="2020-11-14T09:34:52+08:00">2020-11-14</time>
+        <time title="修改时间：2021-02-24 12:13:33" itemprop="dateModified" datetime="2021-02-24T12:13:33+08:00">2021-02-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,11 +290,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Language/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
         </span>
     </span>
 
@@ -314,7 +313,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>415</span>
+      <span>397</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -332,13 +331,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <center>C语言编译器为什么不检查数组是否越界</center>
+        <div class="note no-icon default"><p><strong>参考：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhang2050jian/article/details/6978151">Ｃ语言的编译器为什么不检查数组下标越界</a></p>
+</div>
 
-<p><strong>参考：</strong></p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhang2050jian/article/details/6978151">Ｃ语言的编译器为什么不检查数组下标越界</a></li>
-</ol>
 <p><strong>Ｃ语言的编译器是不检查下标越界的,以前知道这个问题,可是没有想过是什么原因?</strong></p>
+<span id="more"></span>
+
 <p> 总结如下:</p>
 <ol>
 <li>不检查下标是否越界可以<strong>有效提高程序运行的效率，</strong>因为如果你检查，那么编译器必须在生成的目标代码中加入额外的代码用于程序运行时检测下标是否越界，这就会导致程序的运行速度下降，所以为了程序的运行效率，C/C++才不检查下标是否越界。</li>
@@ -354,10 +353,10 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\1b9b.html" rel="bookmark">计算两数的最大公因数和最小公倍数</a></div>
+      <div class="popular-posts-title"><a href="\posts\1b9a.html" rel="bookmark">C语言随机数的生成</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\1b9a.html" rel="bookmark">随机数的生成</a></div>
+      <div class="popular-posts-title"><a href="\posts\1b9b.html" rel="bookmark">计算两数的最大公因数和最小公倍数</a></div>
     </li>
   </ul>
 
@@ -382,15 +381,14 @@
 
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"># C</a>
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/6e69" rel="prev" title="《沉睡的森林》 东野奎吾">
-                  <i class="fa fa-chevron-left"></i> 《沉睡的森林》 东野奎吾
+                <a href="/posts/1b9a" rel="prev" title="C语言随机数的生成">
+                  <i class="fa fa-chevron-left"></i> C语言随机数的生成
                 </a>
             </div>
             <div class="post-nav-item">
@@ -473,6 +471,7 @@
   <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="/true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
 var pjax = new Pjax({
   selectors: [

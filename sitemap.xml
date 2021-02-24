@@ -4,56 +4,63 @@
   <url>
     <loc>https://lymtics.top/about/index.html</loc>
     
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lymtics.top/about/site</loc>
+    <loc>https://lymtics.top/about/deleted/index.html</loc>
     
-    <lastmod>2021-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/2868237d</loc>
-    
-    <lastmod>2021-02-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/ec23</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/2739</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/1b9b</loc>
-    
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2021-02-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://lymtics.top/posts/1b9a</loc>
     
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2021-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lymtics.top/posts/6e69</loc>
+    <loc>https://lymtics.top/posts/ec23</loc>
     
-    <lastmod>2020-09-19</lastmod>
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/posts/2739</loc>
+    
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/posts/1b9b</loc>
+    
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/favorites/index.html</loc>
+    
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/posts/26645</loc>
+    
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/posts/2868237d</loc>
+    
+    <lastmod>2021-02-23</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://lymtics.top/posts/1e0aeef4</loc>
     
     <lastmod>2020-08-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/bb5df521</loc>
-    
-    <lastmod>2020-08-26</lastmod>
     
   </url>
   
@@ -95,85 +95,36 @@
 
   <url>
     <loc>https://lymtics.top/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://lymtics.top/tags/Books/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Feelings/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/tags/C/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lymtics.top/tags/C/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/C/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Python/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Words/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Experience/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/Computer/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/tags/School-Major/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/tags/Vue/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lymtics.top/tags/Linux/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -181,78 +132,71 @@
 
   
   <url>
-    <loc>https://lymtics.top/categories/Reading/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Others/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Language/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Back/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Small-Toys/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Core/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Reading/Japanese/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Back/C/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/About-Computer/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Back/C/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Language/C/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Core/Algorithm/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Language/C/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Front/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/About-Computer/Problems/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Tools/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Algorithm/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Front/Vue/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Operating-System/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/categories/Operating-System/Linux/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <loc>https://lymtics.top/categories/Tools/Linux/</loc>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
