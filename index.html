@@ -272,7 +272,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-03-07 00:00:00 / 修改时间：09:55:44" itemprop="dateCreated datePublished" datetime="2021-03-07T00:00:00+08:00">2021-03-07</time>
+      <time title="创建时间：2021-03-07 00:00:00 / 修改时间：09:57:02" itemprop="dateCreated datePublished" datetime="2021-03-07T00:00:00+08:00">2021-03-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -721,7 +721,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-05 20:36:46" itemprop="dateModified" datetime="2021-03-05T20:36:46+08:00">2021-03-05</time>
+        <time title="修改时间：2021-03-07 10:41:32" itemprop="dateModified" datetime="2021-03-07T10:41:32+08:00">2021-03-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -729,7 +729,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Others/" itemprop="url" rel="index"><span itemprop="name">Others</span></a>
+          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
         </span>
     </span>
 
@@ -767,36 +771,14 @@
 <h2 id="原文摘录"><a href="#原文摘录" class="headerlink" title="原文摘录"></a>原文摘录</h2><p>它们基本不一样吗？</p>
 <p>不,绝对不是.差远了.</p>
 <p>除了你的宏是一个<code>int</code>而你的<code>constexpr unsigned</code>是一个<code>unsigned</code>,你有一个重要的区别,宏只有<strong>一个</strong>优势.</p>
-<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><p>宏由预处理器定义,并且每次发生时都会简单地替换为代码.预处理器<strong>很笨</strong>,不懂C++语法或语义.宏忽略名称空间,类或功能块等范围,因此您不能在源文件中使用其他任何名称.对于定义为正确的C++变量的常量,情况并非如此:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_HEIGHT 720</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> max_height = <span class="number">720</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span> &#123;</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">int</span> max_height;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>调用成员变量是很好的,<code>max_height</code>因为它是一个类成员,因此具有不同的作用域,并且与命名空间作用域不同.如果您尝试重用该<code>MAX_HEIGHT</code>成员的名称,那么预处理器会将其更改为无法编译的无意义:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span> &#123;</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">int</span> <span class="number">720</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>这就是为什么你必须给宏<code>UGLY_SHOUTY_NAMES</code>以确保它们脱颖而出,你可以小心命名它们以避免冲突.如果不必要地使用宏,则不必担心(并且不必阅读<code>SHOUTY_NAMES</code>).</p>
-<p>如果你只想在一个函数内部使用一个常量,你不能用宏来做,因为预处理器不知道函数是什么或它在里面意味着什么.要将宏限制为仅限文件的某个部分,您需要<code>#undef</code>再次使用它:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">limit</span><span class="params">(<span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_HEIGHT 720</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">std</span>::max(height, MAX_HEIGHT);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> MAX_HEIGHT</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>与更明智的比较:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">limit</span><span class="params">(<span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constexpr</span> <span class="keyword">int</span> max_height = <span class="number">720</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">std</span>::max(height, max_height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>为什么你更喜欢宏观？</p>
-<h3 id="一个真实的内存位置"><a href="#一个真实的内存位置" class="headerlink" title="一个真实的内存位置"></a>一个真实的内存位置</h3><p>constexpr变量*是一个变量,*因此它实际存在于程序中,您可以执行普通的C++操作,例如获取其地址并绑定对它的引用.</p>
-<p>此代码具有未定义的行为:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_HEIGHT 720</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">limit</span><span class="params">(<span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">int</span>&amp; h = <span class="built_in">std</span>::max(height, MAX_HEIGHT);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>问题是它<code>MAX_HEIGHT</code>不是变量,因此必须由编译器创建对<code>std::max</code>临时的调用<code>int</code>.<code>std::max</code>然后返回的引用可能引用那个临时的,该语句在该语句结束后不存在,因此<code>return h</code>访问无效的内存.</p>
-<p>这个问题根本不存在适当的变量,因为它在内存中有一个固定的位置,不会消失:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">limit</span><span class="params">(<span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constexpr</span> <span class="keyword">int</span> max_height = <span class="number">720</span>;</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">int</span>&amp; h = <span class="built_in">std</span>::max(height, max_height);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>(在实践中,你可能会声明<code>int h</code>不是,<code>const int&amp; h</code>但问题可能出现在更微妙的背景下.)</p>
-<h3 id="预处理器条件"><a href="#预处理器条件" class="headerlink" title="预处理器条件"></a>预处理器条件</h3><p>唯一一次选择宏是指您需要预处理器理解其值,以便在<code>#if</code>条件中使用,例如</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_HEIGHT 720</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> MAX_HEIGHT &lt; 256</span></span><br><span class="line"><span class="keyword">using</span> height_type = <span class="keyword">unsigned</span> <span class="keyword">char</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="keyword">using</span> height_type = <span class="keyword">unsigned</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-
-<p>您无法在此处使用变量,因为预处理器无法理解如何通过名称引用变量.它只能理解基本的非常基本的东西,比如宏扩展和以<code>#</code>(<code>#include</code>和<code>#define</code>和<code>#if</code>)开头的指令.</p>
-<p>如果您想要<em>预处理器可以理解</em>的常量*,*那么您应该使用预处理器来定义它.如果您想要普通C++代码的常量,请使用普通的C++代码.</p>
-<p>上面的示例只是为了演示预处理器条件,但即使该代码也可以避免使用预处理器:</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> height_type = <span class="built_in">std</span>::<span class="keyword">conditional_t</span>&lt;max_height &lt; <span class="number">256</span>, <span class="keyword">unsigned</span> <span class="keyword">char</span>, <span class="keyword">unsigned</span> <span class="keyword">int</span>&gt;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/9053#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
