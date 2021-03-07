@@ -174,7 +174,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -238,6 +238,121 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/48711">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
+      <meta itemprop="name" content="Ren">
+      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LYMTICS">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/48711" class="post-title-link" itemprop="url">C/C++关于NULL和nullptr的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-03-07 00:00:00 / 修改时间：09:55:44" itemprop="dateCreated datePublished" datetime="2021-03-07T00:00:00+08:00">2021-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>719</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <div class="note no-icon default"><p><strong>参考</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012707739/article/details/77915483">C/C++中的NULL与nullptr</a></p>
+</div>
+
+
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在用C++尾插法构建链表时, 我用<code>NULL</code>来表示空指针, 并用如下代码检查是否到了链表的尾部:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (oldE-&gt;next)</span><br></pre></td></tr></table></figure>
+
+<p>但是在debug时发现这个表达式总是正确的</p>
+<p>经过查资料发现:</p>
+<ul>
+<li>我们可以在C中用NULL表示空指针</li>
+<li>但是在C++中, <code>NULL</code>并不能用来表示空指针, 而应该用<code>nullptr</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/48711#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -388,7 +503,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-28 15:22:52" itemprop="dateModified" datetime="2021-02-28T15:22:52+08:00">2021-02-28</time>
+        <time title="修改时间：2021-03-07 09:48:24" itemprop="dateModified" datetime="2021-03-07T09:48:24+08:00">2021-03-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -438,55 +553,15 @@
 </ul>
 </li>
 <li>**子图: **字面意思</li>
-<li><strong>有向图/无向图:</strong> 边是否有序<ul>
-<li>有序的用&lt;1, 2&gt;这样表示</li>
-<li>无序用(1, 2)这样表示</li>
 </ul>
-</li>
-<li><strong>完全图:</strong> 有n个顶点和n(n-1)/2条边的无向图</li>
-<li><strong>有向完全图:</strong> 有n个顶点和n(n-1)条弧的有向图</li>
-<li><strong>稀疏图/稠密图:</strong> 字面意思</li>
-<li><strong>权/网:</strong> 与图的边或弧相关的数/带权的图称为网</li>
-<li><strong>邻接:</strong> <ul>
-<li>对于无向图G=(V,E)，若边(v, v’) ∈E，则称：v和 v’互为邻接点，边(v, v’)依附于顶点v和 v’，边(v, v’)和顶点v,v’相关联。</li>
-<li>对于有向图G=(V,A)，若弧&lt;v, v’&gt; ∈A，则称：v邻接到 v’， v’邻接自 v，弧&lt;v, v’&gt;和顶点v,v’相关联。</li>
-</ul>
-</li>
-<li><strong>顶点的度:</strong> <ul>
-<li>无向图: 与顶点相关联的边的数量</li>
-<li>有向图: 分为出度和入度</li>
-</ul>
-</li>
-</ul>
-<div class="note info"><p>若Vi的度记为TD(Vi)，那么有n个顶点，e条边或弧的图，满足：<br>$$<br>e = \frac{1}{2}\sum_{i=1}^nTD(V_i)<br>$$</p>
-</div>
-
-<ul>
-<li><strong>路径:</strong> 是从顶点到顶点经过的顶点的序列</li>
-<li>**路径长度: ** 路径上权值之和</li>
-<li><strong>回路:</strong> 第一个顶点和最后一个顶点相同的路径</li>
-<li><strong>简单路径:</strong> 序列中顶点不重复出现的路径</li>
-<li><strong>简单回路:</strong> 结合上面</li>
-</ul>
-<ul>
-<li><strong>连同:</strong> 从顶点V到顶点W有一条路径，则称V和W是连通的</li>
-<li><strong>连通图:</strong> 任意两个顶点都是连通的无向图</li>
-<li><strong>强连通图:</strong> 有向图G中，如果对每一对Vi,VjV, ViVj ，从Vi到Vj和从Vj到Vi都存在路径，则称G是强连通图</li>
-<li><strong>连通分量:</strong> 非连通图的每一个连通部分称连通分量</li>
-<li><strong>强连通分量:</strong> 有向图中的强连通子图</li>
-</ul>
-<ul>
-<li><strong>有向树:</strong> 若一有向图恰有一个顶点的入度为0，其余顶点的入度均为1，则是一棵有向树</li>
-<li><strong>有向图的生成森林:</strong> 由若干棵有向树组成，含有图中全部顶点，但只有足以构成若干棵互不相交的有向树的弧</li>
-</ul>
-<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><h3 id="数组表示法"><a href="#数组表示法" class="headerlink" title="数组表示法"></a>数组表示法</h3><blockquote>
-<p>用一维数组存储数据元素(顶点)<br>用二维数组(邻接矩阵)存储数据元素之间的关系</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 邻接矩阵</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAX_VERTEX_NUM = <span class="number">20</span>; <span class="comment">// 最大顶点数</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> INF = <span class="number">65535</span>;         <span class="comment">//表示权值的无穷</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> VRType;      <span class="comment">//用户定义权值类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">//顶点的数据类型</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MGraph</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    VertexType vertexes[MAX_VERTEX_NUM];        <span class="comment">// 顶点向量列表</span></span><br><span class="line">    VRType arc[MAX_VERTEX_NUM][MAX_VERTEX_NUM]; <span class="comment">// 邻接矩阵(这里的数值可以是1/0表示是否联通, 或权值/正无穷)</span></span><br><span class="line">    <span class="keyword">int</span> vexnum, arcnum;                         <span class="comment">// 图的当前顶点数和弧数(循环遍历时需要)</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MGraph();</span><br><span class="line">    <span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="keyword">const</span> MGraph G);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MGraph::MGraph()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k, w;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;输入顶点数和边数: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; <span class="keyword">this</span>-&gt;vexnum &gt;&gt; <span class="keyword">this</span>-&gt;arcnum;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;输入顶点值: &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;vexnum; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; &amp;<span class="keyword">this</span>-&gt;vertexes[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;vexnum; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="keyword">this</span>-&gt;vexnum; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>-&gt;arc[i][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="keyword">this</span>-&gt;arcnum; ++k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;请输入边(vi,vj)的下标i,j和权w:&quot;</span>; <span class="comment">//是下标不是坐标</span></span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; i &gt;&gt; j &gt;&gt; w;</span><br><span class="line">        <span class="keyword">this</span>-&gt;arc[i][j] = w;</span><br><span class="line">        <span class="keyword">this</span>-&gt;arc[j][i] = w; <span class="comment">//无向图对称</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="keyword">const</span> MGraph G)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.vexnum; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; G.vertexes[i] &lt;&lt; <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.vexnum; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; G.vexnum; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; G.arc[i][j] &lt;&lt; <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MGraph mg;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mg;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 邻接链表</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXVEX = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">// 顶点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> EdgeType;    <span class="comment">// 边上的权值类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span> // 边表结点</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> adjvex;            <span class="comment">// 邻接点域, 存储该顶点对应的下标</span></span><br><span class="line">	EdgeType weight;       <span class="comment">// 用于存储权值</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span>* <span class="title">next</span>;</span> <span class="comment">// 链域, 指向下一个邻接点</span></span><br><span class="line">&#125; EdgeNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VertexNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	VertexType data;     <span class="comment">// 存储顶点信息</span></span><br><span class="line">	EdgeNode* firstedge; <span class="comment">// 边表头指针</span></span><br><span class="line">&#125; VertexNode, AdjList[MAXVEX];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GraphAdjList</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	AdjList adjList;</span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">// 图中当前顶点数和边数</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	GraphAdjList();</span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="keyword">const</span> GraphAdjList G);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">GraphAdjList::GraphAdjList()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, k;</span><br><span class="line">	EdgeNode* e;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;输入顶点数和边数&quot;</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; <span class="keyword">this</span>-&gt;numVertexes &gt;&gt; <span class="keyword">this</span>-&gt;numEdges;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;numVertexes; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;输入第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;个顶点信息: &quot;</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; <span class="keyword">this</span>-&gt;adjList[i].data;      <span class="comment">// 用户输入顶点信息</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;adjList[i].firstedge = <span class="literal">NULL</span>; <span class="comment">// 将边表置为空表</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="keyword">this</span>-&gt;numEdges; ++k)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;输入边(vi, vj)上的顶点序号: &quot;</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; i &gt;&gt; j;</span><br><span class="line">		e = (EdgeNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(EdgeNode)); <span class="comment">// 申请空间</span></span><br><span class="line">		<span class="keyword">if</span> (!e)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;内存错误!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		e-&gt;adjvex = j;</span><br><span class="line">		e-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">this</span>-&gt;adjList[i].firstedge = e;</span><br><span class="line">		e = (EdgeNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(EdgeNode)); <span class="comment">// 申请空间</span></span><br><span class="line">		<span class="keyword">if</span> (!e)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;内存错误!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		e-&gt;adjvex = i;</span><br><span class="line">		e-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">this</span>-&gt;adjList[j].firstedge = e;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="keyword">const</span> GraphAdjList G)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	EdgeNode* e;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.numVertexes; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; G.adjList[i].data &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">		e = G.adjList[i].firstedge;</span><br><span class="line">		<span class="keyword">while</span> (e)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; e-&gt;adjvex &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			e = e-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GraphAdjList graph;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; graph;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h3><h3 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h3><h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><h2 id="图的连通性问题"><a href="#图的连通性问题" class="headerlink" title="图的连通性问题"></a>图的连通性问题</h2><h2 id="有向无环图的应用"><a href="#有向无环图的应用" class="headerlink" title="有向无环图的应用"></a>有向无环图的应用</h2><h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/8679#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -739,115 +814,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/ec23">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/ec23" class="post-title-link" itemprop="url">关于const_cast的一些学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-11-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-14T00:00:00+08:00">2020-11-14</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-24 12:15:05" itemprop="dateModified" datetime="2021-02-24T12:15:05+08:00">2021-02-24</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>近日阅读《C++ primer》，在阅读至<code>const_cast</code>这里时, 书中所述比较奇怪, 看的不是很懂, 然后就自己写了段程序测试一下, 没想到发现了一些奇怪的问题.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/ec23#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
