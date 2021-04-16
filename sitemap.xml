@@ -2,65 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lymtics.top/posts/3993.html</loc>
+    <loc>https://lymtics.top/posts/59200.html</loc>
     
     <lastmod>2021-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lymtics.top/posts/59200.html</loc>
+    <loc>https://lymtics.top/posts/3993.html</loc>
     
-    <lastmod>2021-04-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/3417.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/37422.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/28662.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/2857.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/39080.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/36311.html</loc>
-    
-    <lastmod>2021-03-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/0.html</loc>
-    
-    <lastmod>2021-03-27</lastmod>
+    <lastmod>2021-04-16</lastmod>
     
   </url>
   
@@ -80,13 +31,6 @@
   
   <url>
     <loc>https://lymtics.top/posts/48711.html</loc>
-    
-    <lastmod>2021-03-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/posts/8679.html</loc>
     
     <lastmod>2021-03-07</lastmod>
     
@@ -200,7 +144,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/tags/C/</loc>
+    <loc>https://lymtics.top/tags/Mock/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -214,7 +158,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/tags/MySQL/</loc>
+    <loc>https://lymtics.top/tags/C/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -227,21 +171,7 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://lymtics.top/tags/Mock/</loc>
-    <lastmod>2021-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://lymtics.top/categories/Back/</loc>
-    <lastmod>2021-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>https://lymtics.top/categories/Others/</loc>
@@ -251,14 +181,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Back/C/</loc>
-    <lastmod>2021-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/categories/Back/C/</loc>
+    <loc>https://lymtics.top/categories/Back/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,7 +195,21 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Tools/</loc>
+    <loc>https://lymtics.top/categories/Front/</loc>
+    <lastmod>2021-04-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/categories/Back/C/</loc>
+    <lastmod>2021-04-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lymtics.top/categories/Back/C/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -293,13 +230,6 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Tools/MySQL/</loc>
-    <lastmod>2021-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lymtics.top/categories/Core/Algorithm/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
@@ -307,7 +237,7 @@
   </url>
   
   <url>
-    <loc>https://lymtics.top/categories/Core/DateStructure/</loc>
+    <loc>https://lymtics.top/categories/Tools/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -315,13 +245,6 @@
   
   <url>
     <loc>https://lymtics.top/categories/Tools/Linux/</loc>
-    <lastmod>2021-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lymtics.top/categories/Front/</loc>
     <lastmod>2021-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
