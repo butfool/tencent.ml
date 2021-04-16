@@ -23,23 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lymtics.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"none","post_body":"fadeInUp","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="基本用法在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为： int rand(void);    &#x2F;&#x2F;void 表示不需要传递参数  rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。">
+<meta name="description" content="常用函数字符函数CONCATCONCAT(S1, S2...Sn);连接S1, S2…Sn为一个字符串 CONCAT(s, S1, S2...Sn);连接S1, S2…Sn为一个字符串, 中间用s隔开 # 案例: 查询first_name和last_name拼接成的全名, 最终起名为: 姓名SELECT CONCAT(first_name,&#39; &#39;,last_name) &quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言随机数的生成">
-<meta property="og:url" content="https://lymtics.top/posts/1b9a.html">
+<meta property="og:title" content="MySQL常用函数">
+<meta property="og:url" content="https://lymtics.top/posts/3417.html">
 <meta property="og:site_name" content="LYMTICS">
-<meta property="og:description" content="基本用法在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为： int rand(void);    &#x2F;&#x2F;void 表示不需要传递参数  rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。">
+<meta property="og:description" content="常用函数字符函数CONCATCONCAT(S1, S2...Sn);连接S1, S2…Sn为一个字符串 CONCAT(s, S1, S2...Sn);连接S1, S2…Sn为一个字符串, 中间用s隔开 # 案例: 查询first_name和last_name拼接成的全名, 最终起名为: 姓名SELECT CONCAT(first_name,&#39; &#39;,last_name) &quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif">
-<meta property="article:published_time" content="2020-09-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-24T04:18:59.009Z">
+<meta property="article:published_time" content="2021-03-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-31T03:00:51.203Z">
 <meta property="article:author" content="Ren">
-<meta property="article:tag" content="C">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif">
 
 
-<link rel="canonical" href="https://lymtics.top/posts/1b9a.html">
+<link rel="canonical" href="https://lymtics.top/posts/3417.html">
 
 
 <script data-pjax class="page-configurations">
@@ -51,7 +49,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>C语言随机数的生成 | LYMTICS</title>
+<title>MySQL常用函数 | LYMTICS</title>
   
 
 
@@ -164,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">随机数的本质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%92%AD%E7%A7%8D"><span class="nav-number">3.</span> <span class="nav-text">重新播种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E4%B8%80%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">生成一定范围内的随机数</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">字符函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CONCAT"><span class="nav-number">1.1.1.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LENGTH"><span class="nav-number">1.1.2.</span> <span class="nav-text">LENGTH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SUBSTR"><span class="nav-number">1.1.3.</span> <span class="nav-text">SUBSTR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#INSTR"><span class="nav-number">1.1.4.</span> <span class="nav-text">INSTR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRIM"><span class="nav-number">1.1.5.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LPAD-RPAD"><span class="nav-number">1.1.6.</span> <span class="nav-text">LPAD&#x2F;RPAD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UPPER-LOWER"><span class="nav-number">1.1.7.</span> <span class="nav-text">UPPER&#x2F;LOWER</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">日期函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">流程控制函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.5.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DISTINCT%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.1.</span> <span class="nav-text">DISTINCT函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IFNULL%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text">IFNULL函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">常用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">2.0.1.</span> <span class="nav-text">查看表的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%B7%E5%88%AB%E5%90%8D"><span class="nav-number">2.0.2.</span> <span class="nav-text">起别名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8AS%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">使用AS关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E6%A0%BC"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">使用空格</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/1b9a.html">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/3417.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -267,7 +265,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C语言随机数的生成
+          MySQL常用函数
         </h1>
 
         <div class="post-meta-container">
@@ -278,14 +276,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-09-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-18T00:00:00+08:00">2020-09-18</time>
+      <time title="创建时间：2021-03-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-10T00:00:00+08:00">2021-03-10</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-24 12:18:59" itemprop="dateModified" datetime="2021-02-24T12:18:59+08:00">2021-02-24</time>
+        <time title="修改时间：2021-03-31 11:00:51" itemprop="dateModified" datetime="2021-03-31T11:00:51+08:00">2021-03-31</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,11 +291,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+          <a href="/categories/Tools/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
         </span>
     </span>
 
@@ -316,14 +314,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -334,44 +332,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rand</span><span class="params">(<span class="keyword">void</span>)</span></span>;    <span class="comment">//void 表示不需要传递参数</span></span><br></pre></td></tr></table></figure>
+        <h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h3><h4 id="CONCAT"><a href="#CONCAT" class="headerlink" title="CONCAT"></a>CONCAT</h4><p><code>CONCAT(S1, S2...Sn);</code>连接S1, S2…Sn为一个字符串</p>
+<p><code>CONCAT(s, S1, S2...Sn);</code>连接S1, S2…Sn为一个字符串, 中间用s隔开</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 案例: 查询first_name和last_name拼接成的全名, 最终起名为: 姓名</span><br><span class="line">SELECT CONCAT(first_name,&#39; &#39;,last_name) &quot;姓 名&quot; FROM employees;</span><br><span class="line">SELECT CONCAT(&#39; &#39;,first_name,last_name) &quot;姓 名&quot; FROM employees;</span><br></pre></td></tr></table></figure>
 
-<p>rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。</p>
-<span id="more"></span>
+<h4 id="LENGTH"><a href="#LENGTH" class="headerlink" title="LENGTH"></a>LENGTH</h4><p><code>LENGTH(S)</code>返回S的长度(UTF-8中中文是3个字节)</p>
+<p><code>CHAR_LENGTH(S)</code>返回S的字符长度(中文是1)</p>
+<h4 id="SUBSTR"><a href="#SUBSTR" class="headerlink" title="SUBSTR"></a>SUBSTR</h4><p><code>SUBSTR(&#39;字符串&#39;, 起始索引, 截取的长度)</code>(索引从1开始)</p>
+<p>如果省略截取的长度, 则到结尾</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT SUBSTR(&#39;HelloWorld&#39;, 1, 5);</span><br></pre></td></tr></table></figure>
 
-<p>RAND_MAX 是 &lt;stdlib.h&gt; 头文件中的一个宏，它用来指明 rand() 所能返回的随机数的最大值。C语言标准并没有规定 RAND_MAX 的具体数值，只是规定它的值至少为 32767。在实际编程中，我们也不需要知道 RAND_MAX 的具体值，把它当做一个很大的数来对待即可。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="INSTR"><a href="#INSTR" class="headerlink" title="INSTR"></a>INSTR</h4><p>获取字符第一次出现的索引</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT INSTR(&#39;HelloWorld&#39;, &#39;l&#39;);</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>C语言中还有一个 random() 函数可以获取随机数，但是 random() 不是标准函数，不能在 VC/VS 等编译器通过，所以比较少用。</p>
-</blockquote>
-<h2 id="随机数的本质"><a href="#随机数的本质" class="headerlink" title="随机数的本质"></a>随机数的本质</h2><p>多次运行上面的代码，你会发现每次产生的随机数都一样，这是怎么回事呢？为什么随机数并不随机呢？</p>
-<p>实际上，rand() 函数产生的随机数是<strong>伪随机数</strong>，是根据一个数值按照某个公式推算出来的，这个数值我们称之为“种子”。种子和随机数之间的关系是一种正态分布.如下图所示</p>
-<p><img data-src="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif" alt="C语言随机数和种子之间呈正态分布"></p>
-<p>种子在每次启动计算机时是随机的，但是<strong>一旦计算机启动以后它就不再变化</strong>了；也就是说，每次启动计算机以后，种子就是定值了，所以根据公式推算出来的结果（也就是生成的随机数）就是固定的。</p>
-<h2 id="重新播种"><a href="#重新播种" class="headerlink" title="重新播种"></a>重新播种</h2><p>我们可以通过 srand() 函数来重新“播种”，这样种子就会发生改变。srand() 的用法为：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">srand</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> seed)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM"></a>TRIM</h4><p>去前后指定字符, 默认是空格</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 去除前后的空格</span><br><span class="line">SELECT TRIM(&#39; XX &#39;) AS A;</span><br><span class="line"># 去除前后的a</span><br><span class="line">SELECT TRIM(&#39;aXXXa&#39;) AS B;</span><br></pre></td></tr></table></figure>
 
-<p>它需要一个 unsigned int 类型的参数。在实际开发中，我们可以用时间作为参数，只要每次播种的时间不同，那么生成的种子就不同，最终的随机数也就不同。</p>
-<p>使用 &lt;time.h&gt; 头文件中的 time() 函数即可得到当前的时间（精确到秒），就像下面这样：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="LPAD-RPAD"><a href="#LPAD-RPAD" class="headerlink" title="LPAD/RPAD"></a>LPAD/RPAD</h4><p>左填充/右填充</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT LPAD(&#39;只有6个字符&#39;, 10, &#39;x&#39;);</span><br><span class="line">#输出: xxxx只有6个字符</span><br></pre></td></tr></table></figure>
 
-<p>对上面的代码进行修改，生成随机数之前先进行播种：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    a = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="UPPER-LOWER"><a href="#UPPER-LOWER" class="headerlink" title="UPPER/LOWER"></a>UPPER/LOWER</h4><p>变大写/小写</p>
+<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><h3 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h3><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="DISTINCT函数"><a href="#DISTINCT函数" class="headerlink" title="DISTINCT函数"></a>DISTINCT函数</h4><p><code>DISTINCT</code>函数可以去除重复的结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 案例: 查询员工涉及到的部门</span><br><span class="line">SELECT department_id &quot;部 门&quot; FROM employees;</span><br><span class="line">SELECT DISTINCT department_id &quot;部 门&quot; FROM employees;</span><br></pre></td></tr></table></figure>
 
-<p>多次运行程序，会发现每次生成的随机数都不一样了。但是，这些随机数会有逐渐增大或者逐渐减小的趋势，这是因为我们以时间为种子，时间是逐渐增大的，结合上面的正态分布图，很容易推断出随机数也会逐渐增大或者减小。</p>
-<h2 id="生成一定范围内的随机数"><a href="#生成一定范围内的随机数" class="headerlink" title="生成一定范围内的随机数"></a>生成一定范围内的随机数</h2><p>在实际开发中，我们往往需要一定范围内的随机数，过大或者过小都不符合要求，那么，如何产生一定范围的随机数呢？我们可以利用取模的方法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = rand() % <span class="number">10</span>;    <span class="comment">//产生0~9的随机数，注意10会被整除</span></span><br></pre></td></tr></table></figure>
+<h4 id="IFNULL函数"><a href="#IFNULL函数" class="headerlink" title="IFNULL函数"></a>IFNULL函数</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 作用: 如果表达式1的结果为NULL, 则显示表达式2</span><br><span class="line">SELECT DISTINCT IFNULL(department_id, &#39;空&#39;) &quot;部 门&quot; FROM employees;</span><br></pre></td></tr></table></figure>
 
-<p>如果要规定上下限：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = rand() % <span class="number">51</span> + <span class="number">13</span>;    <span class="comment">//产生13~63的随机数</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h2><h4 id="查看表的结构"><a href="#查看表的结构" class="headerlink" title="查看表的结构"></a>查看表的结构</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DESC employees;</span><br><span class="line">SHOW COLUMNS FROM employees;</span><br></pre></td></tr></table></figure>
 
-<p>分析：取模即取余，<code>rand()%51+13</code>我们可以看成两部分：<code>rand()%51</code>是产生 0~50 的随机数，后面<code>+13</code>保证 a 最小只能是 13，最大就是 50+13=63。</p>
-<p>所以我们想要生成指定范围的随机数的话就需要使用到<strong>求余</strong>运算符 <code>%</code>，这里有个规律：例如我们需要 0–10的随机数时，就写成 <code>rand()%11</code>，0–100就写成 <code>rand()%101</code>，就是运算符后的数字需要比需求范围极值大 1，当然这也是取余运算的原理。</p>
-<p>最后给出产生 13~63 范围内随机数的完整代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    a = rand() % <span class="number">51</span> + <span class="number">13</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="起别名"><a href="#起别名" class="headerlink" title="起别名"></a>起别名</h4><h5 id="使用AS关键字"><a href="#使用AS关键字" class="headerlink" title="使用AS关键字"></a>使用AS关键字</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT USER() AS 用户名;</span><br><span class="line">SELECT last_name AS &quot;姓 名&quot; FROM employees;</span><br></pre></td></tr></table></figure>
 
+<p>注意如果中间有空格的话需要使用引号括住</p>
+<h5 id="使用空格"><a href="#使用空格" class="headerlink" title="使用空格"></a>使用空格</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT last_name &quot;姓 名&quot; FROM employees;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -383,13 +374,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2739.html" rel="bookmark">C语言编译器为什么不检查数组是否越界</a></div>
+      <div class="popular-posts-title"><a href="\posts\37422.html" rel="bookmark">MySQL-查询--条件查询</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\1b9b.html" rel="bookmark">计算两数的最大公因数和最小公倍数</a></div>
+      <div class="popular-posts-title"><a href="\posts\28662.html" rel="bookmark">MySQL基础知识</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\8679.html" rel="bookmark">数据结构--图</a></div>
+      <div class="popular-posts-title"><a href="\posts\39080.html" rel="bookmark">MySQL-查询--基础查询</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2857.html" rel="bookmark">MySQL-查询--模糊查询</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\36311.html" rel="bookmark">MySQL查询--排序</a></div>
     </li>
   </ul>
 
@@ -404,7 +401,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/1b9a.html" title="C语言随机数的生成">https://lymtics.top/posts/1b9a.html</a>
+      <a href="https://lymtics.top/posts/3417.html" title="MySQL常用函数">https://lymtics.top/posts/3417.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -413,20 +410,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/1b9b.html" rel="prev" title="计算两数的最大公因数和最小公倍数">
-                  <i class="fa fa-chevron-left"></i> 计算两数的最大公因数和最小公倍数
+                <a href="/posts/37422.html" rel="prev" title="MySQL-查询--条件查询">
+                  <i class="fa fa-chevron-left"></i> MySQL-查询--条件查询
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2739.html" rel="next" title="C语言编译器为什么不检查数组是否越界">
-                  C语言编译器为什么不检查数组是否越界 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/0.html" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -581,7 +578,7 @@ if (document.querySelectorAll('.pdf-container').length) {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://lymtics.top/posts/1b9a.html',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://lymtics.top/posts/3417.html',]
       });
       });
   </script>

@@ -177,20 +177,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -262,10 +262,10 @@
       
       <div class="post-body"><div class="tag-cloud">
   <div class="tag-cloud-title">
-    目前共计 4 个标签
+    目前共计 6 个标签
   </div>
   <div class="tag-cloud-tags">
-    <a href="/tags/C/" style="font-size: 30px;" class="tag-cloud-10">C</a> <a href="/tags/C/" style="font-size: 25px;" class="tag-cloud-7">C++</a> <a href="/tags/Linux/" style="font-size: 15px;" class="tag-cloud-0">Linux</a> <a href="/tags/Vue/" style="font-size: 20px;" class="tag-cloud-3">Vue</a>
+    <a href="/tags/C/" style="font-size: 25px;" class="tag-cloud-7">C</a> <a href="/tags/C/" style="font-size: 20px;" class="tag-cloud-3">C++</a> <a href="/tags/Linux/" style="font-size: 15px;" class="tag-cloud-0">Linux</a> <a href="/tags/Mock/" style="font-size: 15px;" class="tag-cloud-0">Mock</a> <a href="/tags/MySQL/" style="font-size: 30px;" class="tag-cloud-10">MySQL</a> <a href="/tags/Vue/" style="font-size: 20px;" class="tag-cloud-3">Vue</a>
   </div>
 </div>
 
@@ -384,6 +384,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

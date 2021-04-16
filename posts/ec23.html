@@ -26,7 +26,7 @@
 <meta name="description" content="起因近日阅读《C++ primer》，在阅读至const_cast这里时, 书中所述比较奇怪, 看的不是很懂, 然后就自己写了段程序测试一下, 没想到发现了一些奇怪的问题.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于const_cast的一些学习">
-<meta property="og:url" content="https://lymtics.top/posts/ec23">
+<meta property="og:url" content="https://lymtics.top/posts/ec23.html">
 <meta property="og:site_name" content="LYMTICS">
 <meta property="og:description" content="起因近日阅读《C++ primer》，在阅读至const_cast这里时, 书中所述比较奇怪, 看的不是很懂, 然后就自己写了段程序测试一下, 没想到发现了一些奇怪的问题.">
 <meta property="og:locale" content="zh_CN">
@@ -178,20 +178,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -252,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/ec23">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/ec23.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -385,7 +385,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/ec23" title="关于const_cast的一些学习">https://lymtics.top/posts/ec23</a>
+      <a href="https://lymtics.top/posts/ec23.html" title="关于const_cast的一些学习">https://lymtics.top/posts/ec23.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -401,12 +401,12 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2739" rel="prev" title="C语言编译器为什么不检查数组是否越界">
+                <a href="/posts/2739.html" rel="prev" title="C语言编译器为什么不检查数组是否越界">
                   <i class="fa fa-chevron-left"></i> C语言编译器为什么不检查数组是否越界
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/9053" rel="next" title="宏定义和constexpr的区别">
+                <a href="/posts/9053.html" rel="next" title="宏定义和constexpr的区别">
                   宏定义和constexpr的区别 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -525,6 +525,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

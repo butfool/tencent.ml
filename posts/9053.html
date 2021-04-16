@@ -26,7 +26,7 @@
 <meta name="description" content="Reference: Constexpr与宏   问题描述使用VS编写代码时, 总是被提醒让把#define转换成constexpr, 不解其故, 所以上网查询了一下 原文摘录它们基本不一样吗？ 不,绝对不是.差远了. 除了你的宏是一个int而你的constexpr unsigned是一个unsigned,你有一个重要的区别,宏只有一个优势.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="宏定义和constexpr的区别">
-<meta property="og:url" content="https://lymtics.top/posts/9053">
+<meta property="og:url" content="https://lymtics.top/posts/9053.html">
 <meta property="og:site_name" content="LYMTICS">
 <meta property="og:description" content="Reference: Constexpr与宏   问题描述使用VS编写代码时, 总是被提醒让把#define转换成constexpr, 不解其故, 所以上网查询了一下 原文摘录它们基本不一样吗？ 不,绝对不是.差远了. 除了你的宏是一个int而你的constexpr unsigned是一个unsigned,你有一个重要的区别,宏只有一个优势.">
 <meta property="og:locale" content="zh_CN">
@@ -178,20 +178,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -252,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/9053">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/9053.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -381,10 +381,10 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\ec23.html" rel="bookmark">关于const_cast的一些学习</a></div>
+      <div class="popular-posts-title"><a href="\posts\48711.html" rel="bookmark">C/C++关于NULL和nullptr的区别</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\48711.html" rel="bookmark">C/C++关于NULL和nullptr的区别</a></div>
+      <div class="popular-posts-title"><a href="\posts\ec23.html" rel="bookmark">关于const_cast的一些学习</a></div>
     </li>
   </ul>
 
@@ -399,7 +399,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/9053" title="宏定义和constexpr的区别">https://lymtics.top/posts/9053</a>
+      <a href="https://lymtics.top/posts/9053.html" title="宏定义和constexpr的区别">https://lymtics.top/posts/9053.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -415,12 +415,12 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/ec23" rel="prev" title="关于const_cast的一些学习">
+                <a href="/posts/ec23.html" rel="prev" title="关于const_cast的一些学习">
                   <i class="fa fa-chevron-left"></i> 关于const_cast的一些学习
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/26645" rel="next" title="Vue Router 用法笔记">
+                <a href="/posts/26645.html" rel="next" title="Vue Router 用法笔记">
                   Vue Router 用法笔记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -539,6 +539,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

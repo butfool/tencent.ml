@@ -26,7 +26,7 @@
 <meta name="description" content="Basic Operations of Linux ID:20LINUX1  Linux目录结构 linux系统的根目录只有一个(“&#x2F;“)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic Operations of Linux">
-<meta property="og:url" content="https://lymtics.top/posts/2868237d">
+<meta property="og:url" content="https://lymtics.top/posts/2868237d.html">
 <meta property="og:site_name" content="LYMTICS">
 <meta property="og:description" content="Basic Operations of Linux ID:20LINUX1  Linux目录结构 linux系统的根目录只有一个(“&#x2F;“)">
 <meta property="og:locale" content="zh_CN">
@@ -186,20 +186,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -260,7 +260,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/2868237d">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/2868237d.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -1492,7 +1492,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/2868237d" title="Basic Operations of Linux">https://lymtics.top/posts/2868237d</a>
+      <a href="https://lymtics.top/posts/2868237d.html" title="Basic Operations of Linux">https://lymtics.top/posts/2868237d.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -1510,7 +1510,7 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/posts/1e0aeef4" rel="next" title="经验篇 | 开启网络共享后仍无法找到计算机">
+                <a href="/posts/1e0aeef4.html" rel="next" title="经验篇 | 开启网络共享后仍无法找到计算机">
                   经验篇 | 开启网络共享后仍无法找到计算机 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -1629,6 +1629,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

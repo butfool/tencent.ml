@@ -174,20 +174,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -267,7 +267,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/48711" itemprop="url">
+          <a class="post-title-link" href="/posts/48711.html" itemprop="url">
             <span itemprop="name">C/C++关于NULL和nullptr的区别</span>
           </a>
       </div>
@@ -287,7 +287,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/9053" itemprop="url">
+          <a class="post-title-link" href="/posts/9053.html" itemprop="url">
             <span itemprop="name">宏定义和constexpr的区别</span>
           </a>
       </div>
@@ -310,7 +310,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/ec23" itemprop="url">
+          <a class="post-title-link" href="/posts/ec23.html" itemprop="url">
             <span itemprop="name">关于const_cast的一些学习</span>
           </a>
       </div>
@@ -430,6 +430,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

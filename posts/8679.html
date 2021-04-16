@@ -26,7 +26,7 @@
 <meta name="description" content="基本概念 顶点: 图中的数据元素通常称为顶点 图: 图G是由两个集合V(G)和E(G)组成的, 记为G(V, E), 其中 V(G)是顶点的有限集 E(G)是边的有限集, 边是顶点的无序对或有序对   **子图: **字面意思">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构--图">
-<meta property="og:url" content="https://lymtics.top/posts/8679">
+<meta property="og:url" content="https://lymtics.top/posts/8679.html">
 <meta property="og:site_name" content="LYMTICS">
 <meta property="og:description" content="基本概念 顶点: 图中的数据元素通常称为顶点 图: 图G是由两个集合V(G)和E(G)组成的, 记为G(V, E), 其中 V(G)是顶点的有限集 E(G)是边的有限集, 边是顶点的无序对或有序对   **子图: **字面意思">
 <meta property="og:locale" content="zh_CN">
@@ -178,20 +178,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -252,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/8679">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/8679.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -402,13 +402,13 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2739.html" rel="bookmark">C语言编译器为什么不检查数组是否越界</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\1b9a.html" rel="bookmark">C语言随机数的生成</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\1b9b.html" rel="bookmark">计算两数的最大公因数和最小公倍数</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2739.html" rel="bookmark">C语言编译器为什么不检查数组是否越界</a></div>
     </li>
   </ul>
 
@@ -423,7 +423,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/8679" title="数据结构--图">https://lymtics.top/posts/8679</a>
+      <a href="https://lymtics.top/posts/8679.html" title="数据结构--图">https://lymtics.top/posts/8679.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -439,12 +439,12 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/26645" rel="prev" title="Vue Router 用法笔记">
+                <a href="/posts/26645.html" rel="prev" title="Vue Router 用法笔记">
                   <i class="fa fa-chevron-left"></i> Vue Router 用法笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/7451" rel="next" title="Vue Axios 基本使用">
+                <a href="/posts/7451.html" rel="next" title="Vue Axios 基本使用">
                   Vue Axios 基本使用 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -563,6 +563,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

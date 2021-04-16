@@ -23,23 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lymtics.top","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"none","post_body":"fadeInUp","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="基本用法在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为： int rand(void);    &#x2F;&#x2F;void 表示不需要传递参数  rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。">
+<meta name="description" content="数据库了解常见数据库产品 Oracle: 甲骨文, 贵 DB2: IDM SQL Server: 微软; 还可以, 兼容性有问题 MySQL, 甲骨文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言随机数的生成">
-<meta property="og:url" content="https://lymtics.top/posts/1b9a.html">
+<meta property="og:title" content="MySQL基础知识">
+<meta property="og:url" content="https://lymtics.top/posts/28662.html">
 <meta property="og:site_name" content="LYMTICS">
-<meta property="og:description" content="基本用法在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为： int rand(void);    &#x2F;&#x2F;void 表示不需要传递参数  rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。">
+<meta property="og:description" content="数据库了解常见数据库产品 Oracle: 甲骨文, 贵 DB2: IDM SQL Server: 微软; 还可以, 兼容性有问题 MySQL, 甲骨文">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif">
-<meta property="article:published_time" content="2020-09-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-24T04:18:59.009Z">
+<meta property="article:published_time" content="2021-03-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-31T02:20:53.374Z">
 <meta property="article:author" content="Ren">
-<meta property="article:tag" content="C">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif">
 
 
-<link rel="canonical" href="https://lymtics.top/posts/1b9a.html">
+<link rel="canonical" href="https://lymtics.top/posts/28662.html">
 
 
 <script data-pjax class="page-configurations">
@@ -51,7 +49,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>C语言随机数的生成 | LYMTICS</title>
+<title>MySQL基础知识 | LYMTICS</title>
   
 
 
@@ -164,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">随机数的本质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%92%AD%E7%A7%8D"><span class="nav-number">3.</span> <span class="nav-text">重新播种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E4%B8%80%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">生成一定范围内的随机数</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">数据库了解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%A7%E5%93%81"><span class="nav-number">1.1.</span> <span class="nav-text">常见数据库产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">数据库相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">数据库存储数据的特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E5%85%A5%E9%97%A8"><span class="nav-number">2.</span> <span class="nav-text">MySQL入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="nav-number">2.1.</span> <span class="nav-text">MySQL数据库的简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">MySQL服务端安装和卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2"><span class="nav-number">2.3.</span> <span class="nav-text">MySQL服务的启动和停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%9E%E6%8E%A5%E5%92%8C%E9%80%80%E5%87%BA"><span class="nav-number">2.4.</span> <span class="nav-text">MySQL服务的连接和退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.5.</span> <span class="nav-text">MySQL操作示例</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/1b9a.html">
+    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/28662.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
@@ -267,7 +265,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C语言随机数的生成
+          MySQL基础知识
         </h1>
 
         <div class="post-meta-container">
@@ -278,14 +276,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-09-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-18T00:00:00+08:00">2020-09-18</time>
+      <time title="创建时间：2021-03-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-09T00:00:00+08:00">2021-03-09</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-24 12:18:59" itemprop="dateModified" datetime="2021-02-24T12:18:59+08:00">2021-02-24</time>
+        <time title="修改时间：2021-03-31 10:20:53" itemprop="dateModified" datetime="2021-03-31T10:20:53+08:00">2021-03-31</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,11 +291,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/" itemprop="url" rel="index"><span itemprop="name">Back</span></a>
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Back/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+          <a href="/categories/Tools/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
         </span>
     </span>
 
@@ -316,14 +314,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -334,45 +332,97 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，它的用法为：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rand</span><span class="params">(<span class="keyword">void</span>)</span></span>;    <span class="comment">//void 表示不需要传递参数</span></span><br></pre></td></tr></table></figure>
-
-<p>rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。</p>
+        <h2 id="数据库了解"><a href="#数据库了解" class="headerlink" title="数据库了解"></a>数据库了解</h2><h3 id="常见数据库产品"><a href="#常见数据库产品" class="headerlink" title="常见数据库产品"></a>常见数据库产品</h3><ul>
+<li>Oracle: 甲骨文, 贵</li>
+<li>DB2: IDM</li>
+<li>SQL Server: 微软; 还可以, 兼容性有问题</li>
+<li>MySQL, 甲骨文</li>
+</ul>
 <span id="more"></span>
 
-<p>RAND_MAX 是 &lt;stdlib.h&gt; 头文件中的一个宏，它用来指明 rand() 所能返回的随机数的最大值。C语言标准并没有规定 RAND_MAX 的具体数值，只是规定它的值至少为 32767。在实际编程中，我们也不需要知道 RAND_MAX 的具体值，把它当做一个很大的数来对待即可。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>C语言中还有一个 random() 函数可以获取随机数，但是 random() 不是标准函数，不能在 VC/VS 等编译器通过，所以比较少用。</p>
+<h3 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a>数据库相关概念</h3><ul>
+<li><p>DB(DataBase)</p>
+<p>数据库; 存储数据的仓库, 保存了一系列有组织的数据</p>
+</li>
+<li><p>DBMS(DB Management System)</p>
+<p>数据库管理系统.</p>
+<p>数据库是通过DBMS创建和操作的容器</p>
+</li>
+<li><p>SQL(Structure Query Language)</p>
+<p>结构化查询语言, 专门用来与数据库通信的语言</p>
+</li>
+</ul>
+<h3 id="数据库存储数据的特点"><a href="#数据库存储数据的特点" class="headerlink" title="数据库存储数据的特点"></a>数据库存储数据的特点</h3><ul>
+<li>将数据放入表中, 在讲表放入库中</li>
+<li>一个数据库中可以有多个表, 每个表都有一个自己的名字, 用来表示自己, 具有唯一性</li>
+<li>ORM</li>
+</ul>
+<h2 id="MySQL入门"><a href="#MySQL入门" class="headerlink" title="MySQL入门"></a>MySQL入门</h2><h3 id="MySQL数据库的简介"><a href="#MySQL数据库的简介" class="headerlink" title="MySQL数据库的简介"></a>MySQL数据库的简介</h3><ul>
+<li>开源 关系型数据库管理系统</li>
+<li>体积小, 速度快, 成本低</li>
+</ul>
+<h3 id="MySQL服务端安装和卸载"><a href="#MySQL服务端安装和卸载" class="headerlink" title="MySQL服务端安装和卸载"></a>MySQL服务端安装和卸载</h3><blockquote>
+<p><strong>DBMS 分为两类:</strong></p>
+<ul>
+<li>基于共享文件系统的DBMS(Access)</li>
+<li>基于客户机-服务器的DBMS(C/S)(MySQL, Oracle, SQLServer)</li>
+</ul>
 </blockquote>
-<h2 id="随机数的本质"><a href="#随机数的本质" class="headerlink" title="随机数的本质"></a>随机数的本质</h2><p>多次运行上面的代码，你会发现每次产生的随机数都一样，这是怎么回事呢？为什么随机数并不随机呢？</p>
-<p>实际上，rand() 函数产生的随机数是<strong>伪随机数</strong>，是根据一个数值按照某个公式推算出来的，这个数值我们称之为“种子”。种子和随机数之间的关系是一种正态分布.如下图所示</p>
-<p><img data-src="http://c.biancheng.net/uploads/allimg/190118/1-1Z11QAT9315.gif" alt="C语言随机数和种子之间呈正态分布"></p>
-<p>种子在每次启动计算机时是随机的，但是<strong>一旦计算机启动以后它就不再变化</strong>了；也就是说，每次启动计算机以后，种子就是定值了，所以根据公式推算出来的结果（也就是生成的随机数）就是固定的。</p>
-<h2 id="重新播种"><a href="#重新播种" class="headerlink" title="重新播种"></a>重新播种</h2><p>我们可以通过 srand() 函数来重新“播种”，这样种子就会发生改变。srand() 的用法为：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">srand</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> seed)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>**卸载: **</p>
+<ol>
+<li>先停止MySQL的服务(服务里停止)</li>
+<li>点击卸载uninstall.exe</li>
+<li>清除残余文件<ul>
+<li>MySQL安装目录下</li>
+<li>C:\ProgramData\MySQL</li>
+</ul>
+</li>
+<li>清理注册表(略)</li>
+</ol>
+<p><strong>安装:</strong></p>
+<ul>
+<li>安装后配置: MySQLInstanceConfig.exe</li>
+<li>配置文件修改: My.ini<ul>
+<li>编码格式</li>
+<li>存储引擎 INNODB</li>
+<li>语法模式SQL-mode</li>
+<li>最大连接数max-connection</li>
+</ul>
+</li>
+</ul>
+<h3 id="MySQL服务的启动和停止"><a href="#MySQL服务的启动和停止" class="headerlink" title="MySQL服务的启动和停止"></a>MySQL服务的启动和停止</h3><ul>
+<li><p>图形化界面</p>
+<p>服务-&gt;MySQL-&gt;启动</p>
+</li>
+<li><p>命令行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
 
-<p>它需要一个 unsigned int 类型的参数。在实际开发中，我们可以用时间作为参数，只要每次播种的时间不同，那么生成的种子就不同，最终的随机数也就不同。</p>
-<p>使用 &lt;time.h&gt; 头文件中的 time() 函数即可得到当前的时间（精确到秒），就像下面这样：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br></pre></td></tr></table></figure>
+<ol>
+<li>mysql是名称, 可能是mysql80等</li>
+<li>要以管理员身份执行</li>
+</ol>
+</li>
+</ul>
+<h3 id="MySQL服务的连接和退出"><a href="#MySQL服务的连接和退出" class="headerlink" title="MySQL服务的连接和退出"></a>MySQL服务的连接和退出</h3><ul>
+<li><p><strong>方式1. MySQL自带客户端</strong></p>
+<p>开始菜单 -&gt; MySQL Server -&gt; MySQL Command Line Client</p>
+<p>只能以root用户方式登录</p>
+</li>
+<li><p><strong>方式2. 终端中登录</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 连自己的, 而且端口是3306</span></span><br><span class="line">mysql -u[root] -p[password]</span><br><span class="line"><span class="comment"># 连别人的</span></span><br><span class="line">mysql -h[localhost] -P[3306] -u[root] -p[password]</span><br></pre></td></tr></table></figure>
 
-<p>对上面的代码进行修改，生成随机数之前先进行播种：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    a = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>-p不能加空格, 其他的可以加</p>
+</li>
+</ul>
+<h3 id="MySQL操作示例"><a href="#MySQL操作示例" class="headerlink" title="MySQL操作示例"></a>MySQL操作示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
 
-<p>多次运行程序，会发现每次生成的随机数都不一样了。但是，这些随机数会有逐渐增大或者逐渐减小的趋势，这是因为我们以时间为种子，时间是逐渐增大的，结合上面的正态分布图，很容易推断出随机数也会逐渐增大或者减小。</p>
-<h2 id="生成一定范围内的随机数"><a href="#生成一定范围内的随机数" class="headerlink" title="生成一定范围内的随机数"></a>生成一定范围内的随机数</h2><p>在实际开发中，我们往往需要一定范围内的随机数，过大或者过小都不符合要求，那么，如何产生一定范围的随机数呢？我们可以利用取模的方法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = rand() % <span class="number">10</span>;    <span class="comment">//产生0~9的随机数，注意10会被整除</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 打开数据库</span><br><span class="line">use mysql;</span><br><span class="line"># 展示</span><br><span class="line">show tables;</span><br></pre></td></tr></table></figure>
 
-<p>如果要规定上下限：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = rand() % <span class="number">51</span> + <span class="number">13</span>;    <span class="comment">//产生13~63的随机数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show tables from test;</span><br></pre></td></tr></table></figure>
 
-<p>分析：取模即取余，<code>rand()%51+13</code>我们可以看成两部分：<code>rand()%51</code>是产生 0~50 的随机数，后面<code>+13</code>保证 a 最小只能是 13，最大就是 50+13=63。</p>
-<p>所以我们想要生成指定范围的随机数的话就需要使用到<strong>求余</strong>运算符 <code>%</code>，这里有个规律：例如我们需要 0–10的随机数时，就写成 <code>rand()%11</code>，0–100就写成 <code>rand()%101</code>，就是运算符后的数字需要比需求范围极值大 1，当然这也是取余运算的原理。</p>
-<p>最后给出产生 13~63 范围内随机数的完整代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    a = rand() % <span class="number">51</span> + <span class="number">13</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 当前数据库是哪个</span><br><span class="line">select database();</span><br></pre></td></tr></table></figure>
 
-
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 添加</span><br><span class="line">create table stuinfo(</span><br><span class="line">	stuid int,</span><br><span class="line">	stuname varchar(20),</span><br><span class="line">	gender char,</span><br><span class="line">	borndate datetime;</span><br><span class="line"></span><br><span class="line"># 查询</span><br><span class="line">desc stuinfo;</span><br><span class="line"># 插入</span><br><span class="line">insert into stuinfo values(1, &#39;Tom&#39;, &#39;男&#39;, &#39;1998-3-3&#39;);</span><br><span class="line"># 修改字符集</span><br><span class="line">set names gbk;</span><br><span class="line"># 更新</span><br><span class="line">update sudinfo set borndate&#x3D;&#39;1999-8-8&#39; where stuid &#x3D; 2;</span><br><span class="line">-- 删除</span><br><span class="line">delete from stuinfo where stuid &#x3D; 1;</span><br><span class="line">&#x2F;*</span><br><span class="line">    多行注释</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -383,13 +433,19 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2739.html" rel="bookmark">C语言编译器为什么不检查数组是否越界</a></div>
+      <div class="popular-posts-title"><a href="\posts\3417.html" rel="bookmark">MySQL常用函数</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\1b9b.html" rel="bookmark">计算两数的最大公因数和最小公倍数</a></div>
+      <div class="popular-posts-title"><a href="\posts\37422.html" rel="bookmark">MySQL-查询--条件查询</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\8679.html" rel="bookmark">数据结构--图</a></div>
+      <div class="popular-posts-title"><a href="\posts\39080.html" rel="bookmark">MySQL-查询--基础查询</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2857.html" rel="bookmark">MySQL-查询--模糊查询</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\36311.html" rel="bookmark">MySQL查询--排序</a></div>
     </li>
   </ul>
 
@@ -404,7 +460,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lymtics.top/posts/1b9a.html" title="C语言随机数的生成">https://lymtics.top/posts/1b9a.html</a>
+      <a href="https://lymtics.top/posts/28662.html" title="MySQL基础知识">https://lymtics.top/posts/28662.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -413,20 +469,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/1b9b.html" rel="prev" title="计算两数的最大公因数和最小公倍数">
-                  <i class="fa fa-chevron-left"></i> 计算两数的最大公因数和最小公倍数
+                <a href="/posts/48711.html" rel="prev" title="C/C++关于NULL和nullptr的区别">
+                  <i class="fa fa-chevron-left"></i> C/C++关于NULL和nullptr的区别
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2739.html" rel="next" title="C语言编译器为什么不检查数组是否越界">
-                  C语言编译器为什么不检查数组是否越界 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/36311.html" rel="next" title="MySQL查询--排序">
+                  MySQL查询--排序 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -581,7 +637,7 @@ if (document.querySelectorAll('.pdf-container').length) {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://lymtics.top/posts/1b9a.html',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://lymtics.top/posts/28662.html',]
       });
       });
   </script>

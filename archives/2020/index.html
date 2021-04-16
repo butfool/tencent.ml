@@ -174,20 +174,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -246,7 +246,7 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 11 篇日志。 继续努力。</span>
+        <span class="collection-header">嗯..! 目前共计 20 篇日志。 继续努力。</span>
       </div>
 
       
@@ -265,7 +265,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/ec23" itemprop="url">
+          <a class="post-title-link" href="/posts/ec23.html" itemprop="url">
             <span itemprop="name">关于const_cast的一些学习</span>
           </a>
       </div>
@@ -285,7 +285,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/2739" itemprop="url">
+          <a class="post-title-link" href="/posts/2739.html" itemprop="url">
             <span itemprop="name">C语言编译器为什么不检查数组是否越界</span>
           </a>
       </div>
@@ -305,7 +305,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/1b9a" itemprop="url">
+          <a class="post-title-link" href="/posts/1b9a.html" itemprop="url">
             <span itemprop="name">C语言随机数的生成</span>
           </a>
       </div>
@@ -325,7 +325,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/1b9b" itemprop="url">
+          <a class="post-title-link" href="/posts/1b9b.html" itemprop="url">
             <span itemprop="name">计算两数的最大公因数和最小公倍数</span>
           </a>
       </div>
@@ -345,7 +345,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/1e0aeef4" itemprop="url">
+          <a class="post-title-link" href="/posts/1e0aeef4.html" itemprop="url">
             <span itemprop="name">经验篇 | 开启网络共享后仍无法找到计算机</span>
           </a>
       </div>
@@ -365,7 +365,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/posts/2868237d" itemprop="url">
+          <a class="post-title-link" href="/posts/2868237d.html" itemprop="url">
             <span itemprop="name">Basic Operations of Linux</span>
           </a>
       </div>
@@ -486,6 +486,25 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 
