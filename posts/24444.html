@@ -20,25 +20,50 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.lymtics.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"none","post_body":"fadeInUp","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="幸遇三杯酒好，况逢一朵花新。  片时欢笑且相亲，明日阴晴未定。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LYMTICS">
-<meta property="og:url" content="https://blog.lymtics.top/index.html">
+<meta name="description" content="快速幂（Exponentiation by squaring，平方求幂）是一种简单而有效的小算法，它可以以的时间复杂度计算乘方。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。  让我们先来思考一个问题：7的10次方，怎样算比较快？ 方法1：最朴素的想法，7*7&#x3D;49，49*7&#x3D;343，… 一步一步算，共进行了9次乘法。 这样算无疑太慢了，尤其对计算机的CPU而言，每次运算只乘上一个个位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速幂">
+<meta property="og:url" content="https://blog.lymtics.top/posts/24444.html">
 <meta property="og:site_name" content="LYMTICS">
-<meta property="og:description" content="幸遇三杯酒好，况逢一朵花新。  片时欢笑且相亲，明日阴晴未定。">
+<meta property="og:description" content="快速幂（Exponentiation by squaring，平方求幂）是一种简单而有效的小算法，它可以以的时间复杂度计算乘方。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。  让我们先来思考一个问题：7的10次方，怎样算比较快？ 方法1：最朴素的想法，7*7&#x3D;49，49*7&#x3D;343，… 一步一步算，共进行了9次乘法。 这样算无疑太慢了，尤其对计算机的CPU而言，每次运算只乘上一个个位">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O(%5Clog+n)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O(%5Clog+n)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%5En=%5Cbegin%7Bcases%7Da%5E%7Bn-1%7D%5Ccdot+a,&%5Ctext%7Bif+%7D+n+%5Ctext+%7B+is+odd%7D+%5C%5C+a%5E%7B%5Cfrac%7Bn%7D%7B2%7D%7D%5Ccdot+a%5E%7B%5Cfrac%7Bn%7D%7B2%7D%7D,+&%5Ctext%7Bif+%7D+n+%5Ctext+%7B+is+even+but+not+0%7D%5C%5C+1,&%5Ctext%7Bif+%7D+n=0%5Cend%7Bcases%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%5E%7B%5Cfrac%7Bn%7D%7B2%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%5E%7B%5Cfrac%7Bn%7D%7B2%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O(n)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(1010)_2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E%7B(1010)_2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E%7B(1000)_2%7D+%5Ccdot+7%5E%7B(10)_2%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E%7B(100...)_2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E%7B(100...)_2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5E4">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-e99e321dcff33699093cde2876424dbe_720w.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%5En">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O(%5Clog+n)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F_n+=+%5Cbegin%7Bcases%7D1&+(n+%5Cle+2)+%5C%5C+F_%7Bn-1%7D+F_%7Bn-2%7D&+(n%5Cge+3)+%5Cend%7Bcases%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F_n+%5Cbmod+10%5E9+++7">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=A=%5Cbegin%7Bbmatrix%7D0+&1%5C%5C+1+&+1%5Cend%7Bbmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=A%5Cbegin%7Bbmatrix%7DF_n%5C%5C+F_%7Bn+1%7D%5Cend%7Bbmatrix%7D+=+%5Cbegin%7Bbmatrix%7DF_%7Bn+1%7D%5C%5C+F_n+F_%7Bn+1%7D%5Cend%7Bbmatrix%7D=%5Cbegin%7Bbmatrix%7DF_%7Bn+1%7D%5C%5C+F_%7Bn+2%7D%5Cend%7Bbmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+%5Cbegin%7Bbmatrix%7DF_n%5C%5C+F_%7Bn+1%7D%5Cend%7Bbmatrix%7D+&=+A%5Cbegin%7Bbmatrix%7DF_%7Bn-1%7D%5C%5C+F_n%5Cend%7Bbmatrix%7D%5C%5C&=A%5E2%5Cbegin%7Bbmatrix%7DF_%7Bn-2%7D%5C%5C+F_%7Bn-1%7D%5Cend%7Bbmatrix%7D%5C%5C&=...%5C%5C&=A%5E%7Bn-1%7D%5Cbegin%7Bbmatrix%7DF_1%5C%5C+F_2%5Cend%7Bbmatrix%7D%5C%5C&=A%5E%7Bn-1%7D%5Cbegin%7Bbmatrix%7D1%5C%5C+1%5Cend%7Bbmatrix%7D+%5Cend%7Baligned%7D">
+<meta property="article:published_time" content="2021-12-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-11T00:52:28.143Z">
 <meta property="article:author" content="Ren">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=O(%5Clog+n)">
 
 
-<link rel="canonical" href="https://blog.lymtics.top/">
+<link rel="canonical" href="https://blog.lymtics.top/posts/24444.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.lymtics.top/posts/24444.html","path":"posts/24444.html","title":"快速幂"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LYMTICS</title>
+<title>快速幂 | LYMTICS</title>
   
 
 
@@ -106,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -119,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-number">1.</span> <span class="nav-text">递归快速幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%80%92%E5%BD%92%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-number">2.</span> <span class="nav-text">非递归快速幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E7%9A%84%E6%8B%93%E5%B1%95"><span class="nav-number">3.</span> <span class="nav-text">快速幂的拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">原文</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -200,16 +226,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.lymtics.top/posts/24444.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,9 +249,9 @@
       <meta itemprop="name" content="LYMTICS">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/24444.html" class="post-title-link" itemprop="url">快速幂</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          快速幂
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -239,6 +266,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -263,7 +297,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><strong>快速幂</strong>（<strong>Exponentiation by squaring</strong>，平方求幂）是一种简单而有效的小算法，它可以以<img data-src="https://www.zhihu.com/equation?tex=O(%5Clog+n)" alt="[公式]">的时间复杂度计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%B9%98%E6%96%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:95902286%7D">乘方</a>。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。</p>
+        <p><strong>快速幂</strong>（<strong>Exponentiation by squaring</strong>，平方求幂）是一种简单而有效的小算法，它可以以<img data-src="https://www.zhihu.com/equation?tex=O(%5Clog+n)" alt="[公式]">的时间复杂度计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%B9%98%E6%96%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:95902286%7D">乘方</a>。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。</p>
 <hr>
 <p>让我们先来思考一个问题：<strong>7的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=10%E6%AC%A1%E6%96%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:95902286%7D">10次方</a>，怎样算比较快？</strong></p>
 <p><strong>方法1：</strong>最朴素的想法，7*7=49，49*7=343，… 一步一步算，共进行了<strong>9次</strong>乘法。</p>
@@ -318,337 +352,27 @@
 </li>
 </ul>
 
-      
     </div>
 
     
     
     
+      
+
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.lymtics.top/posts/64693.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2021/11/8c35a2dcbfc9dfd3.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/64693.html" class="post-title-link" itemprop="url">数据结构之堆</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-11-25 00:00:00 / 修改时间：12:40:19" itemprop="dateCreated datePublished" datetime="2021-11-25T00:00:00+08:00">2021-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>7.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>废话</strong></p>
-<p><strong>堆</strong>（Heap）是一种重要的数据结构，但是在大学的数据结构中似乎刚好和这种结构擦肩而过，只记得有一个排序叫“堆排序”，并且在数据结构实习中实现过一次。后来刷LeeCode的时候又遇到了这种结构，所以作文以记之。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/64693.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.lymtics.top/posts/28891.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2021/11/8c35a2dcbfc9dfd3.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/28891.html" class="post-title-link" itemprop="url">算法 | 双指针技巧</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-11T00:00:00+08:00">2021-05-11</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-03 17:30:45" itemprop="dateModified" datetime="2021-06-03T17:30:45+08:00">2021-06-03</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>参考：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/circle/article/GMopsy/?um_chnnl=oppo?um_from_appkey=5fcda41c42348b56d6f8e8d5">常用的双指针技巧 - 力扣（LeetCode）</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/array-and-string/yco3v/">数组和字符串 - LeetBook</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.md">leetcode-master/0027.移除元素</a></p>
-</div>
-
-
-
-<p>双指针的题目一般分为两种: </p>
-<ul>
-<li>左右指针</li>
-<li>快慢指针</li>
-</ul>
-<p>左右指针如二分查找==待完善==</p>
-<p>快慢指针中, 两个指针的运动方向是相同的, 通过两个指针来减少对数组或链表的扫描次数, 从而降低时间复杂度</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/28891.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/64693.html" rel="prev" title="数据结构之堆">
+                  <i class="fa fa-chevron-left"></i> 数据结构之堆
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.lymtics.top/posts/3993.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2021/11/8c35a2dcbfc9dfd3.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/3993.html" class="post-title-link" itemprop="url">获取Promise的返回值</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-04-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-16T00:00:00+08:00">2021-04-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-04 15:30:28" itemprop="dateModified" datetime="2021-12-04T15:30:28+08:00">2021-12-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em>注 : 作者对本文内容不满意, 以后可能会修改或删除</em></p>
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>今天用Vue写项目的时候, 有一个功能是用一个参数Id通过网络请求一个数据.</p>
-<p>由于VueCLI中我用的网络请求插件是Axios, 默认会返回一个Promise对象, 导致我无法获取想要的数据.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/3993.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -656,129 +380,7 @@
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.lymtics.top/posts/48711.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2021/11/8c35a2dcbfc9dfd3.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/48711.html" class="post-title-link" itemprop="url">C/C++关于NULL和nullptr的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-07 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-07T00:00:00+08:00">2021-03-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:26:38" itemprop="dateModified" datetime="2021-05-10T17:26:38+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>719</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>参考</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012707739/article/details/77915483">C/C++中的NULL与nullptr</a></p>
-</div>
-
-
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在用C++尾插法构建链表时, 我用<code>NULL</code>来表示空指针, 并用如下代码检查是否到了链表的尾部:</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (oldE-&gt;next)</span><br></pre></td></tr></table></figure>
-
-<p>但是在debug时发现这个表达式总是正确的</p>
-<p>经过查资料发现:</p>
-<ul>
-<li>我们可以在C中用NULL表示空指针</li>
-<li>但是在C++中, <code>NULL</code>并不能用来表示空指针, 而应该用<code>nullptr</code></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/48711.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 </div>
   </main>
@@ -847,7 +449,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":false,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://blog.lymtics.top/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"ignores":null,"url":"https://blog.lymtics.top/posts/24444.html"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>

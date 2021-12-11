@@ -28,7 +28,7 @@
 <meta property="og:description" content="注 : 作者对本文内容不满意, 以后可能会修改或删除 起因今天用Vue写项目的时候, 有一个功能是用一个参数Id通过网络请求一个数据. 由于VueCLI中我用的网络请求插件是Axios, 默认会返回一个Promise对象, 导致我无法获取想要的数据.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-10T09:28:59.460Z">
+<meta property="article:modified_time" content="2021-12-04T07:30:28.715Z">
 <meta property="article:author" content="Ren">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -246,7 +246,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:28:59" itemprop="dateModified" datetime="2021-05-10T17:28:59+08:00">2021-05-10</time>
+        <time title="修改时间：2021-12-04 15:30:28" itemprop="dateModified" datetime="2021-12-04T15:30:28+08:00">2021-12-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -276,7 +276,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>813</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -314,6 +314,12 @@
 <p>这样return的对象还是Promise对象, 因为async本身是异步操作</p>
 <h2 id="正确做法"><a href="#正确做法" class="headerlink" title="正确做法"></a>正确做法</h2><p>在data中定义一个变量, 保存结果</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        <span class="attr">tmp</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 网络请求</span></span><br><span class="line">    getData(id).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        tmp = res.data</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里之所以能工作，我觉得是因为有Vue的功劳：响应式编程，在数据变化（获取数据的之后）后进行渲染</p>
+<p>其实假如是在一个一般的场景中，最正确的做法还是用Promise封装比较好。即：如果一个功能需要获取异步操作的数据，把这个功能整个封装成一个异步操作比较合适。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用ID获取DATA然后做一件事情，比如是dataFunc()</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 网络请求</span></span><br><span class="line">    getData(id).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        dataFunc(res.data);</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dataFunc</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 对data的功能</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
