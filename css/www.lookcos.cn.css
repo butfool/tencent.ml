@@ -36,7 +36,7 @@ p {
 
 #clock .time {
   letter-spacing: 0.05em;
-  font-size: 50px;
+  font-size: 25px;
   padding: 5px 0;
 }
 #clock .test {
