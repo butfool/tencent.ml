@@ -30,7 +30,7 @@ p {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  ccolor:#E5E8E8;
+  color:#E5E8E8;
   text-shadow:0 0 30px #85929E;
 }
 
