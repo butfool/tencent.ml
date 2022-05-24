@@ -1,28 +1,37 @@
 ﻿<html>
- <head> 
-  <link rel="stylesheet" href="./css/www.lookcos.cn.css" /> 
-  <script src="./js/jquery.min.js"></script> 
-  <script src="./js/www.lookcos.cn.js"></script> 
+
+<head>
+  <link rel="stylesheet" href="./css/www.lookcos.cn.css" />
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/www.lookcos.cn.js"></script>
   <title>杰杰要变强</title>
   <link rel="icon" href="https://s2.loli.net/2022/04/28/Kyj5X3b4Ws8NDrU.png">
- </head> 
- <body scroll="no"> 
-  <div id="clock"> 
-   <p style="color:fffaf0;" class="time" id="hitokoto_text"></p> 
-   <script type="text/javascript">
-		var myDate = new Date();
-		var	nowyear=myDate.getFullYear()+1;
-		document.getElementById('te').innerHTML=nowyear; 
-	</script> 
-   <p class="date"> </p>
-   <div class="clock" style="margin:2em;"></div> 
-   <p></p> 
-   <p><font face="arial" color="red"></font></p>
-   <p class="Author"><font face="arial" color="red"></font></p>
-   <p></p> 
-  </div> 
+</head>
 
-    <script>
+<body scroll="no">
+  <div id="clock">
+    <p style="color:fffaf0;" class="time" id="hitokoto_text"></p>
+
+    <script type="text/javascript">
+      var myDate = new Date();
+      var nowyear = myDate.getFullYear() + 1;
+      document.getElementById('te').innerHTML = nowyear; 
+    </script>
+
+    <p class="date"> </p>
+    <div class="clock" style="margin:2em;"></div>
+    <p></p>
+    <p>
+      <font face="arial" color="red"></font>
+    </p>
+    <p class="Author">
+      <font face="arial" color="red"></font>
+    </p>
+    <p></p>
+  </div>
+
+  <script>
+    const interval = function () {
       fetch('https://v1.hitokoto.cn?max_length=25')
         .then(response => response.json())
         .then(data => {
@@ -31,24 +40,28 @@
           hitokoto.innerText = data.hitokoto
         })
         .catch(console.error)
-    </script>
+        return interval;
+    }
+    setInterval(interval(), 7500);
+  </script>
   <script type="text/javascript">
-		
-		
-			var clock;
 
-			$(document).ready(function() {
-				var myDate = new Date();
-				var	year=2022,month=7,day=15;
-				// <!--var	year=myDate.getFullYear()+1,month=10,day=12;-->
-				var currentDate = new Date();
-				var futureDate = new Date(year, month-1, day, 8.5); 
-				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-				clock = $('.clock').FlipClock(diff, {
-					clockFace: 'DailyCounter',
-					countdown: true
-				});
-			});
-		</script>  
- </body>
+
+    var clock;
+
+    $(document).ready(function () {
+      var myDate = new Date();
+      var year = 2022, month = 7, day = 15;
+      // <!--var	year=myDate.getFullYear()+1,month=10,day=12;-->
+      var currentDate = new Date();
+      var futureDate = new Date(year, month - 1, day, 8.5);
+      var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+      clock = $('.clock').FlipClock(diff, {
+        clockFace: 'DailyCounter',
+        countdown: true
+      });
+    });
+  </script>
+</body>
+
 </html>
