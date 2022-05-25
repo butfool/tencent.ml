@@ -12,11 +12,6 @@
   <div id="clock">
     <p style="color:fffaf0;" class="time" id="hitokoto_text"></p>
 
-    <script type="text/javascript">
-      var myDate = new Date();
-      var nowyear = myDate.getFullYear() + 1;
-      document.getElementById('te').innerHTML = nowyear; 
-    </script>
 
     <p class="date"> </p>
     <div class="clock" style="margin:2em;"></div>
@@ -25,7 +20,7 @@
       <font face="arial" color="red"></font>
     </p>
     <p class="Author">
-      <font face="arial" color="red"></font>
+      — — <font face="arial" color="grey"></font> — —
     </p>
     <p></p>
   </div>
@@ -38,11 +33,12 @@
           const hitokoto = document.getElementById('hitokoto_text')
           hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
           hitokoto.innerText = data.hitokoto
+          document.getElementsByClassName('Author')[0].children[0].innerText = data.from
         })
         .catch(console.error)
         return interval;
     }
-    setInterval(interval(), 7500);
+    setInterval(interval(), 5000);
   </script>
   <script type="text/javascript">
 

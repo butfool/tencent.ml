@@ -48,8 +48,9 @@ p {
 
 #clock .Author {
   letter-spacing: 0.05em;
-  font-size: 15px;
+  font-size: 18px;
   padding: 10px 0;
+  color: rgb(251, 255, 0);
 }
 
 
