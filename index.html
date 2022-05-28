@@ -2,6 +2,7 @@
 
 <head>
   <link rel="stylesheet" href="./css/www.lookcos.cn.css" />
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/www.lookcos.cn.js"></script>
   <title>杰杰要变强</title>
@@ -10,54 +11,19 @@
 
 <body scroll="no">
   <div id="clock">
+    <h2>LYMTICS</h2>
     <p style="color:fffaf0;" class="time" id="hitokoto_text"></p>
-
-
-    <p class="date"> </p>
-    <div class="clock" style="margin:2em;"></div>
-    <p></p>
-    <p>
-      <font face="arial" color="red"></font>
-    </p>
     <p class="Author">
       — — <font face="arial" color="grey"></font> — —
     </p>
-    <p></p>
+    <p class="date"> </p>
+    <div class="clock" style="margin:2em;"></div>
+    <p>
+      <font face="arial" color="red"></font>
+    </p>
+    <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
   </div>
-
-  <script>
-    const interval = function () {
-      fetch('https://v1.hitokoto.cn?max_length=25')
-        .then(response => response.json())
-        .then(data => {
-          const hitokoto = document.getElementById('hitokoto_text')
-          hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-          hitokoto.innerText = data.hitokoto
-          document.getElementsByClassName('Author')[0].children[0].innerText = data.from
-        })
-        .catch(console.error)
-      return interval;
-    }
-    setInterval(interval(), 5000);
-  </script>
-  <script type="text/javascript">
-
-
-    var clock;
-
-    $(document).ready(function () {
-      var myDate = new Date();
-      var year = 2022, month = 7, day = 15;
-      // <!--var	year=myDate.getFullYear()+1,month=10,day=12;-->
-      var currentDate = new Date();
-      var futureDate = new Date(year, month - 1, day, 8.5);
-      var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-      clock = $('.clock').FlipClock(diff, {
-        clockFace: 'DailyCounter',
-        countdown: true
-      });
-    });
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
