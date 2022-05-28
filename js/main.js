@@ -29,3 +29,22 @@ const interval = function () {
   return interval;
 }
 setInterval(interval(), 5000);
+
+// Lean Statics
+const { Query, User } = AV;
+AV.init({
+  appId: "Y2frg1n6f1ET1SkwwFEg2NTk-9Nh9j0Va",
+  appKey: "5pf0NqJ8FCdoM4zwBSt2X6EW",
+  serverURL: "https://y2frg1n6.lc-cn-e1-shared.com"
+})
+
+const query = new AV.Query('Numbers');
+function getAndIncrement() {
+  query.get('6291c865033caa54ba65b1af').then(result => {
+    result.increment('num', 1);
+    result.save();
+    let target = document.querySelector("#visit");
+    target.innerText = `本站总访问 ${result.attributes.num + 1} 次`
+  })
+}
+getAndIncrement();
