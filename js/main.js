@@ -4,7 +4,7 @@
 var clock;
 $(document).ready(function () {
   var myDate = new Date();
-  var year = 2022, month = 10, day = 1;
+  var year = 2022, month = 12, day = 31;
   // <!--var	year=myDate.getFullYear()+1,month=10,day=12;-->
   var currentDate = new Date();
   var futureDate = new Date(year, month - 1, day, 8.5);
